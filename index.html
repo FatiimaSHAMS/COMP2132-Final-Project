@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Comp2132 - Final Project</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <script src="scripts/jquery-3.4.1.min.js" defer="defer"></script>
+    <script src="scripts/final-project.js" defer="defer"></script>
+  </head>
+  <body>
+    <aside class="popup-about hidden">
+      <button class="close-about">&times;</button>
+      <h2>About Game</h2>
+      <ul>
+        <li>The user must guess the correct word by entering letters into an input box.</li>
+        <li>If the user guesses a letter that is contained in the selected word than the game should display the correctly guessed letters in the position of the word where they are located.</li>
+        <li>If the user makes an incorrect guess, then the program should display part of the hangman graphic.</li>
+        <li>the user guesses a letter, disable the option so they cannot choose the same letter more than once per game.</li>
+        <li>If the user makes too many incorrect guesses and the entire hangman graphic is displayed, then the user loses the game. Most hangman games allow 6 incorrect guesses</li>
+        <li>If the user correctly guesses all the letters in the selected word than the user wins the game.</li>
+        <li>the game is over either from making too many incorrect guesses or correctly guessing the word, then the game should display the results (Tell them if they Won or Lost the game) and give the user the option to ‘Play Again’.</li>
+      </ul>
+    </aside>
+    <aside class="overlay hidden"></aside>
+   
+    <header class="main-header">
+      <noscript>
+        <p class="warning-no-script">
+          <b>Javascript is Disabled. </b><br />
+          This website might not work as expected without it. <br />
+          Please
+          <a href="https://www.whatismybrowser.com/guides/how-to-enable-javascript/" target="_blank">Enable Javascript</a>
+          in your browser then refresh.
+        </p>
+      </noscript>
+    </header>
+
+    <nav class="navbar-buttons">
+      
+      <a id="show-about">About Game</a>
+    </nav>
+    
+    <main class="container">
+      <article class="ingredient">
+
+        <header class="ingredient-header">
+          <img src="images/icon_game.gif" alt="Icon Function" width="130" height="130"/>
+        </header>
+        <header class="ingredient-title-box">
+          <h1 class="ingredient-title">COMP 2132 Final Project</h1>
+        </header>
+          <section id='game-content-wrapper'>
+            <h6 class="hidden">HANGMAN GAME</h6>
+
+            <h2 class="assignment-title">HANGMAN GAME</h2>
+            
+            <div class="game-wrapper">
+            
+                <img src="images/hangman/hangman-06.png" alt="Current Hangman State" id="hangman-img">
+
+         
+              <p id="hangman-word"></p>
+              <p id="hangman-hint"></p>
+              <p id="hangman-guesses"></p>
+              <div id="alphabet-buttons"></div>
+              
+            </div>
+
+        </section>
+      </article>
+    </main>
+    <footer>
+      <p id="footer-text">
+        Resize the browser window to see how the content respond to the resizing. 
+      </p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,438 @@
+/* Imports */
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import "variables.scss";
+@import "functions.scss";
+
+
+
+/* Main Content Style */
+.game-wrapper {
+  padding: 20px;
+  background-color: $secondary-color;
+  margin-left: 30px;
+  margin-right: 30px;
+  padding: 35px;
+  border: 5px solid #333;
+  box-shadow: 0.5rem 0.5rem $shadow-color-subtle;
+  border-radius: 15px;
+}
+
+
+/* Buttons */
+#game-content-wrapper {
+  padding-top: 5px;
+  padding-bottom: 30px;
+  color: #626455;
+}
+
+#alphabet-buttons {
+  margin-top: 20px;
+  .btn-alphabet-letter {
+    &:hover, &:focus {
+      box-shadow: 0 0 0 1px rgb(124, 148, 52), 0 0 0 3px $primary-color;
+    }
+  }
+}
+
+.action-button {
+  // width: 45px;
+  text-align: center;
+  background: $primary-color;
+  font-weight: bold;
+  color: white;
+  border: 0 none;
+  border-radius: 1px;
+  cursor: pointer;
+  float: none;
+  border-radius: 2px;
+  
+  padding: 15px;
+  font-size: 15px;
+}
+
+.btn-alphabet-letter {
+  width: 68px;
+  text-align: center;
+  background: $primary-color;
+  font-weight: bold;
+  color: white;
+  border: 0 none;
+  border-radius: 6px;
+  cursor: pointer;
+  float: none;
+  border-radius: 8px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 15px;
+}
+
+
+.btn-disabled-override {
+  cursor: not-allowed;
+  background-color: rgb(129, 129, 129) !important;
+  pointer-events: none;
+}
+
+.btn-disabled-override-colored {
+  cursor: not-allowed;
+  background-color: rgba(4, 58, 27, 0.493) !important;
+  pointer-events: none;
+}
+
+#hangman-word {
+  font-family: montserrat;
+  font-size: 60px;
+  font-weight: bold;
+  color: $primary-color;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#hangman-hint {
+  font-family: montserrat;
+  font-size: 20px;
+  font-weight: bold;
+  color: $primary-color;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#hangman-guesses {
+  font-family: montserrat;
+  font-size: 20px;
+  font-weight: bold;;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color:#e87000;
+}
+
+#hangman-img {
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* --------------- */
+/* Basic Selectors */
+
+body {
+  background:  #85914a;
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+  font-family: roboto;
+}
+
+a {
+  color: inherit;
+}
+
+h1 {
+  font-size: 15px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 45px;
+}
+
+ol {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+
+  /* For IE, the outcast */
+  zoom: 1;
+  *display: inline;
+}
+
+ul {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+
+  /* For IE, the outcast */
+  zoom: 1;
+  *display: inline;
+  list-style-type: none;
+}
+
+li {
+  padding: 15px 15px;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 0.1rem 0.1rem rgba(8, 8, 8, 0.6);
+  margin-bottom: 5px;
+}
+
+footer {
+  color: rgb(0, 0, 0);
+  font-family: Raleway;
+  margin: 0 auto;
+  padding: 1em 2em;
+  text-align: center;
+  
+}
+
+form {
+  display: table;
+}
+
+label {
+  display: table-cell;
+}
+
+/* ----------------------- */
+/* Basic Classes Selectors */
+
+.assignment-title {
+  font-size: 25px;
+  color: #000000;
+  border: 4px solid rgb(35, 35, 35);
+  border-radius: 30px;
+  margin-left: 25px;
+  margin-right: 25px;
+  text-shadow: 0.2rem 0.2rem $shadow-color-solid;
+  text-align: center;
+  background-color: white;
+}
+
+.assignment-description {
+  font-size: 15px;
+  color: rgb(174, 199, 176);
+  text-shadow: 0.2rem 0.2rem $shadow-color-solid;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.operation-description {
+  font-size: 15px;
+  text-align: center;
+  color: rgb(140, 255, 169);
+}
+
+.container {
+  min-height: 85vh;
+  position: relative;
+  background: #3e423a;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 35px auto auto auto;
+}
+
+.ingredient {
+  width: 860px;
+  min-height: 800px;
+  background: #e0dede;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border: 5px solid #333;
+  box-shadow: 0.5rem 0.5rem $shadow-color-solid;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+
+.ingredient-header {
+  @include setWidthHeight(100%, 132px);
+  display: flex;
+  border-bottom: 5px solid #333;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: black;
+}
+
+.text {
+  width: 80%;
+  justify-content: center;
+  align-self: center;
+  margin-bottom: 33px;
+}
+
+.force-inline {
+  display: inline;
+}
+
+.ingredient-title-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 35px;
+}
+
+.ingredient-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 172px;
+  height: 35px;
+  color: #000000;
+  font-weight: 700;
+  border-radius: 12px;
+  align-self: center;
+  background: #ffffff;
+}
+
+.main-header {
+  font-family: Raleway;
+  margin: 0 auto;
+  padding: 1em 2em;
+  text-align: center;
+  margin-top: auto;
+  color:black;
+}
+
+.warning-no-script {
+  padding: 16px;
+  background-color: #da2525;
+  border-radius: 10px;
+  border: solid 1px red;
+  box-shadow: 0.5rem 0.5rem $shadow-color-solid;
+}
+
+
+//// General Behaviour Control
+
+@media only screen and (max-width: 1500px) {
+  .container {
+    flex-wrap: wrap;
+  }
+
+  .ingredient {
+    margin-top: 12px;
+    background-color: #ffffff;
+  }
+}
+
+.ingredient:hover {
+  background: linear-gradient(#989898, #e3e302);
+}
+
+
+//// Navbar Behaviour and Layout
+
+nav.navbar-buttons {
+  text-align: center;
+
+  a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font: 20px Raleway;
+    font-size: large;
+    margin: 0px 10px;
+    padding: 10px 10px;
+    position: relative;
+    cursor: pointer;
+  }
+
+  p {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font: 20px Raleway;
+    margin: 0px 10px;
+    padding: 10px 10px;
+    position: relative;
+    display: inline;
+  }
+
+  a {
+    &:before, &:after {
+      position: absolute;
+      left: 0px;
+      width: 100%;
+      height: 2px;
+      background: #fff;
+      content: '';
+      opacity: 0;
+      transition: all 0.3s;
+    }
+
+    &:before {
+      top: 0px;
+      transform: translateY(10px);
+    }
+
+    &:after {
+      bottom: 0px;
+      transform: translateY(-10px);
+    }
+
+    &:hover {
+      &:before, &:after {
+        opacity: 1;
+        transform: translateY(0px);
+      }
+
+      color: #fff;
+    }
+  }
+}
+
+
+
+//// Popup Control
+
+.hidden {
+  display: none;
+}
+
+.popup-about {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  background-color: rgb(85, 113, 69);
+  padding: 2rem;
+  border-radius: 1px;
+  z-index: 10;
+  border: 2px solid #333;
+  box-shadow: 0.5rem 0.5rem $shadow-color-solid;
+  border-radius: 15px;
+}
+
+.overlay {
+  position: fixed;
+  top: 10px;
+  left: 0;
+  @include setWidthHeight(100%, 100%);
+  background-color: rgba(151, 151, 151, 0.9);
+  backdrop-filter: blur(10px);
+  z-index: 5;
+  
+}
+
+.close-about {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  font-size: 2rem;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  border: none;
+  background:none;
+}
+
+.close-about:hover{
+  color:#da2525;
+}

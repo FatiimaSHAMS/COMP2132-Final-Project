@@ -1,0 +1,6 @@
+/* Functions/Mixins */
+@mixin setWidthHeight($width-pct, $height-pct) {
+    width: $width-pct;
+    height: $height-pct;
+  }
+
